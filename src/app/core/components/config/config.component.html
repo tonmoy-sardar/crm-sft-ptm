@@ -1,0 +1,26 @@
+<div class="customizer border-left-blue-grey border-left-lighten-4 d-none d-xl-block" [ngClass]="{'open': visible}">
+  <a class="customizer-close" (click)="close()">
+    <i class="fa fa-times font-medium-3" aria-hidden="true"></i>
+  </a>
+  <a class="customizer-toggle box-shadow-3" (click)="toggle()">
+    <i class="fa fa-cog font-medium-3 spinner" aria-hidden="true"></i>
+  </a>
+  <div class="customizer-content p-2 ps-container ps-theme-dark ps-active-y"
+    data-ps-id="2c3a2d89-1f2e-1623-0ce5-d932d49ae1ff">
+    <h4 class="text-uppercase mb-0">Table Customizer</h4>
+    <hr>
+    <p>Customize &amp; Preview in Real Time</p>
+    <ul class="config_area">
+      <li>
+        <mat-checkbox class="example-margin" [(ngModel)]="allSelected" (change)="allChange($event.checked)">All
+        </mat-checkbox>
+      </li>
+    </ul>
+    <ul class="config_area" style="overflow-x: hidden !important;   height: 70vh !important;">
+      <li *ngFor="let headerTh of headerThOption ; let i = index">
+        <mat-checkbox class="example-margin" [(ngModel)]="headerTh.selected" (change)="configChange(i,$event.checked)">
+          {{headerTh.name}}</mat-checkbox>
+      </li>
+    </ul>
+  </div>
+</div>

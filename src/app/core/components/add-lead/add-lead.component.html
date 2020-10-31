@@ -1,0 +1,174 @@
+<loading [state]="loading">
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Add Lead</h4>
+      <button type="button" class="close" (click)="close(false)">×</button>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body custom-scroll" style="max-height: 550px; overflow-y: auto;padding:1rem !important">
+        <div class="modal-body-container">
+      <form [formGroup]="form" (ngSubmit)="formSubmit()">
+        <div class="row">
+          <div class="col-sm-4 col-xs-4">
+            <label>Business Name :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="business_name" placeholder=""
+                [ngClass]="displayFieldCss(form,'business_name')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'business_name')">Please Enter Business Name</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>URL :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="url" placeholder=""
+                [ngClass]="displayFieldCss(form,'url')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'url')">Please Enter URL</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>CIN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="cin" placeholder=""
+                [ngClass]="displayFieldCss(form,'cin')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'cin')">Please Enter Valid CIN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>GSTIN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="gstin" placeholder=""
+                [ngClass]="displayFieldCss(form,'gstin')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'gstin')">Please Enter Valid GSTIN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>PAN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="pan" placeholder=""
+                [ngClass]="displayFieldCss(form,'pan')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'pan')">Please Enter Valid PAN</div>
+            </div>
+          </div>
+          
+          <div class="col-sm-4 col-xs-4">
+            <label>First Name :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="first_name" placeholder=""
+                [ngClass]="displayFieldCss(form,'first_name')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'first_name')">Please Enter First Name</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Last Name :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="last_name" placeholder=""
+                [ngClass]="displayFieldCss(form,'last_name')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'last_name')">Please Enter Last Name</div>
+            </div>
+          </div>
+          
+          <div class="col-sm-4 col-xs-4">
+            <label>Country :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="country" 
+                [ngClass]="displayFieldCss(form,'country')" placeholder="Please select">
+                    <ng-option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'country')">Please Select Country</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Phone No :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="phone" placeholder="" appNumber
+                [ngClass]="displayFieldCss(form,'phone')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'phone')">Please Enter Valid Phone No</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Mobile No :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="mobile" placeholder="" appNumber
+                [ngClass]="displayFieldCss(form,'mobile')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'mobile')">Please Enter Valid Mobile No</div>
+            </div>
+          </div>
+          
+          <div class="col-sm-4 col-xs-4">
+            <label>Email ID :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="email" placeholder=""
+                [ngClass]="displayFieldCss(form,'email')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'email')">Please Enter Email ID</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Job Title :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="job_title" placeholder=""
+                [ngClass]="displayFieldCss(form,'job_title')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'job_title')">Please Enter Job Title</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Source :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="source" 
+                [ngClass]="displayFieldCss(form,'source')" placeholder="Please select">
+                    <ng-option *ngFor="let source of sourceList" [value]="source.id">{{source.name}}</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'source')">Please Select Source</div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-xs-4">
+            <label>Remarks :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <textarea class="form-control" formControlName="remarks" placeholder=""
+                [ngClass]="displayFieldCss(form,'remarks')"></textarea>
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'remarks')">Please Enter Remarks</div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-12 col-xs-12 text-center">
+              <button type="submit" class="btn btn-primary modal-save-btn">SAVE</button>
+              <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
+            </div>
+          </div> 
+          
+      </form>
+    </div>
+
+    </div>
+  </div>
+  </loading>

@@ -1,0 +1,397 @@
+<loading [state]="loading">
+    <div class="project-form-page">
+        <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>Project Form</h3>
+        </div>
+      </div>
+      <form [formGroup]="form" class="project-form" (ngSubmit)="formSubmit()">
+        <div class="row">
+          <div class="col-sm-4 col-xs-4">
+            <label>Project :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <mat-radio-group aria-label="Please Select" formControlName="project" [ngClass]="displayFieldCss(form,'project')">
+                <mat-radio-button [value]="1">New Client</mat-radio-button>
+                <mat-radio-button [value]="2" style="margin-left: 15px;">Existing Client</mat-radio-button>
+              </mat-radio-group>
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'project')">Please Select Project</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Territory :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <mat-radio-group aria-label="Please Select" formControlName="territory" [ngClass]="displayFieldCss(form,'territory')">
+                <mat-radio-button [value]="1">Indian</mat-radio-button>
+                <mat-radio-button [value]="2" style="margin-left: 15px;">Global</mat-radio-button>
+              </mat-radio-group>
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'territory')">Please Enter Territory</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Opportunity :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <ng-select class="form-control form-control2 top-search" formControlName="opportunity" 
+                [ngClass]="displayFieldCss(form,'opportunity')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'opportunity')">Please Enter Opportunity Name</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Account Name :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="account_name" placeholder=""
+                [ngClass]="displayFieldCss(form,'account_name')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'account_name')">Please Enter Account Name</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>CIN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="cin" placeholder=""
+                [ngClass]="displayFieldCss(form,'cin')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'cin')">Please Enter CIN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>PAN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="pan" placeholder=""
+                [ngClass]="displayFieldCss(form,'pan')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'pan')">Please Enter PAN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>GSTIN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="gstin" placeholder=""
+                [ngClass]="displayFieldCss(form,'gstin')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'gstin')">Please Enter GSTIN</div>
+            </div>
+          </div>
+          
+          <div class="col-sm-12 col-xs-12" style="margin: 25px 0;">
+            <h3 style="font-size: 16px;font-weight: 600;">POC Details</h3>
+          </div>
+
+          <div class="col-sm-4 col-xs-4">
+            <label>Name :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="name" placeholder=""
+                [ngClass]="displayFieldCss(form,'name')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'name')">Please Enter Name</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Email ID :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="email" placeholder=""
+                [ngClass]="displayFieldCss(form,'email')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'email')">Please Enter Email ID</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Job Title :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="job_title" placeholder=""
+                [ngClass]="displayFieldCss(form,'job_title')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'job_title')">Please Enter Job Title</div>
+            </div>
+          </div>
+          
+          <div class="col-sm-4 col-xs-4">
+            <label>Contact No :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="phone" placeholder=""
+                [ngClass]="displayFieldCss(form,'phone')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'phone')">Please Enter Phone No</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Country :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="country" 
+                [ngClass]="displayFieldCss(form,'country')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'country')">Please Select Country</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Lead Source :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="lead_source" placeholder=""
+                [ngClass]="displayFieldCss(form,'lead_source')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'lead_source')">Please Enter Lead Source</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>URL :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="url" placeholder=""
+                [ngClass]="displayFieldCss(form,'url')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'url')">Please Enter URL</div>
+            </div>
+          </div>
+          
+          <div class="col-sm-12 col-xs-12" style="height: 60px;"></div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Technology :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="technology" placeholder=""
+                [ngClass]="displayFieldCss(form,'technology')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'technology')">Please Enter Technology</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Department :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="department" [multiple]="true"
+                [ngClass]="displayFieldCss(form,'department')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'department')">Please Select Department</div>
+            </div>
+          </div>
+         
+          <div class="col-sm-4 col-xs-4">
+            <label>Domain :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="domain" placeholder=""
+              [ngClass]="displayFieldCss(form,'domain')">
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'domain')">Please Select Domain</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Project Manager :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="project_manager" 
+                [ngClass]="displayFieldCss(form,'project_manager')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'project_manager')">Please Select Project Manager</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Business Analyst Aligned :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="business_analyst" 
+                [ngClass]="displayFieldCss(form,'business_analyst')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'business_analyst')">Please Select Business Analyst Aligned </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-xs-4">
+            <label>Start Date :</label>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <div class="form-group">
+              <input class="form-control" formControlName="start_date" placeholder="DD/MM/YYYY"
+                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
+                [ngClass]="displayFieldCss(form,'start_date')" (dateTimeChange)="formatHandler($event)">
+                <i class="fa fa-calendar icon-on-input" aria-hidden="true" style="right: 15px;"></i>
+
+              <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'start_date')">Please Select Start Date</div>
+            </div>
+          </div>
+          <div class="col-sm-2 col-xs-2">
+            <label>WIn Date :</label>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <div class="form-group">
+              <input class="form-control" formControlName="win_date" placeholder="DD/MM/YYYY"
+                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+                [ngClass]="displayFieldCss(form,'win_date')">
+                <i class="fa fa-calendar icon-on-input" aria-hidden="true" style="right: 15px;"></i>
+              <owl-date-time #dt2 [pickerType]="'calendar'"></owl-date-time>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'win_date')">Please Select Win Date</div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-xs-4">
+            <label>Milestones :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <table class="table table-hover milestone-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Milestone</th>
+                    <th scope="col">Milestone Details</th>
+                    <th scope="col">Payment Percentage</th>
+                    <th scope="col">Delivery Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                  </tr>
+                </tbody>
+              </table>  
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-xs-4">
+            <label>Total Cost :</label>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <div class="form-group">
+              <input class="form-control" formControlName="total_cost" placeholder="" 
+                [ngClass]="displayFieldCss(form,'total_cost')">
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'total_cost')">Please Enter Total Cost</div>
+            </div>
+          </div>
+          <div class="col-sm-2 col-xs-2">
+            <label>Man Hours :</label>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <div class="form-group">
+              <input class="form-control" formControlName="man_hours" placeholder=""
+                [ngClass]="displayFieldCss(form,'man_hours')">
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'man_hours')">Please Enter Man Hours</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Engagement :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="engagement" 
+                [ngClass]="displayFieldCss(form,'engagement')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'engagement')">Please Select Engagement</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Project Description :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <textarea class="form-control" formControlName="project_description" placeholder="" style="min-height: 120px;"
+                [ngClass]="displayFieldCss(form,'project_description')"></textarea>
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'project_description')">Please Enter Project Description</div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-xs-4">
+            <label>Business Proposal :</label>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+
+            <div class="input-group">
+              <div style="float: left;width: 68%;">
+                <input type="text" class="form-control">
+              </div>
+              <div style="float: right;">
+              <label class="input-group-btn document-label">
+                <!-- <span><input type="text" class="form-control"></span> -->
+                <span class="btn btn-file">
+                    Browse... <input style="display: none;" type="file" (change)="onSelectFile($event)" formControlName="proposal_file">
+                    <input  class="form-control"  type="hidden" value="" formControlName="proposal_document" 
+                    [ngClass]="displayFieldCss(form,'proposal_document')" 
+                    >
+                </span>
+                
+              </label>
+              </div>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'proposal_document')">Please Select Document</div>
+
+          </div>
+
+          </div>
+          <div class="col-sm-2 col-xs-2">
+            <label>Customer Consent :</label>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <div class="input-group">
+              <div style="float: left;width: 68%;">
+                <input type="text" class="form-control">
+              </div>
+              <div style="float: right;">
+              <label class="input-group-btn document-label">
+                
+               
+                <span class="btn btn-file">
+                    Browse... <input style="display: none;" type="file" (change)="onSelectFile($event)" formControlName="consent_file">
+                    <input  class="form-control"  type="hidden" value="" formControlName="consent_document" 
+                    [ngClass]="displayFieldCss(form,'consent_document')" 
+                    >
+                </span>
+              
+              </label>
+            </div>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'consent_document')" style="display: block;">Please Select Document</div>
+
+          </div>
+          </div>
+
+            <div class="col-sm-12 col-xs-12 text-center">
+                <div class="form-group">
+              <button type="submit" class="btn btn-primary modal-save-btn">SAVE</button>
+            </div>
+            </div>
+       
+        </div>
+          
+      </form>
+    </div>
+</div>
+</loading>

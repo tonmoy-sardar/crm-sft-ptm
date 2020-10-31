@@ -1,0 +1,66 @@
+<loading [state]="loading">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">View POC List</h4>
+            <button type="button" class="close" (click)="close(false)">×</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+            <!-- <div class="modal-body-container"> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive scrollable-content">
+                            <table class="table table-borderless table-hover custom-table sticky">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">POC Name</th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Email ID</th>
+                                        <th scope="col">Contact Number</th>
+                                        <th scope="col">Job Title</th>                                           
+                                        <th></th>                              
+                                    </tr>
+                                </thead>
+                                <tbody>                                    
+                                    <tr>                                        
+                                        <td><label>Madhuparna Mitra</label></td>
+                                        <td>
+                                            <div class="dragtag" (drop)="drop($event)" (dragover)="allowDrop($event)">
+                                                <span class="rid-row" draggable="true" id="drag1" (dragstart)="drag($event)" >Primary</span>
+                                            </div>
+                                        </td>
+                                        <td><label>test@gmail.com</label></td>
+                                        <td><label>65459865</label></td>
+                                        <td><label>PEO</label></td>  
+                                        <td></td>                                      
+                                    </tr>
+                                    <tr>                                        
+                                        <td><label>Arup Das</label></td>
+                                        <td>
+                                            <div class="dragtag" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+                                        </td>
+                                        <td><label>test@gmail.com</label></td>
+                                        <td><label>65459865</label></td>
+                                        <td><label>PEO</label></td> 
+                                        <td><span class="rid-row"><i class="fa fa-minus-circle" aria-hidden="true"></i></span></td>
+                                    </tr>
+                                    <tr>                                        
+                                        <td><label>David Jacobs</label></td>
+                                        <td>
+                                            <div class="dragtag" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+                                        </td>
+                                        <td><label>test@gmail.com</label></td>
+                                        <td><label>65459865</label></td>
+                                        <td><label>PEO</label></td> 
+                                        <td><span class="rid-row"><i class="fa fa-minus-circle" aria-hidden="true"></i></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</loading>

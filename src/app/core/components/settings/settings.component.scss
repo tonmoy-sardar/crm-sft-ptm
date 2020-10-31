@@ -1,0 +1,115 @@
+.customizer {
+    width: 300px;
+    right: -300px;
+    padding: 0;
+    background-color: #FFF;
+    z-index: 1051;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    -webkit-transition: left .4s cubic-bezier(.05,.74,.2,.99);
+    -o-transition: left .4s cubic-bezier(.05,.74,.2,.99);
+    -moz-transition: left .4s cubic-bezier(.05,.74,.2,.99);
+    transition: left .4s cubic-bezier(.05,.74,.2,.99);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-right: 1px solid rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,.1);
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+}
+.border-left-blue-grey.border-left-lighten-4 {
+    border-right: 1px solid #CFD8DC!important;
+}
+.customizer.open {
+    right: 0;
+    transition: left 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.customizer .customizer-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 7px;
+    width: auto;
+    z-index: 10;
+}
+.customizer a.customizer-close {
+    color: #000;
+}
+.customizer .customizer-toggle {
+    position: absolute;
+    top: 35%;
+    width: 54px;
+    height: 50px;
+    left: -54px;
+    text-align: center;
+    line-height: 56px;
+    cursor: pointer;
+}
+.customizer a.customizer-toggle {
+    background: #33b5e5;
+    color: #FFF;
+    display: block;
+    border-radius: 15px 0 0 15px;
+}
+.box-shadow-3 {
+    -webkit-box-shadow: 0 14px 24px 0 rgba(62,57,107,.26);
+    box-shadow: 0 14px 24px 0 rgba(62,57,107,.26);
+}
+.spinner {
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+.avatar, .spinner, .spinner-reverse {
+    display: inline-block;
+}
+
+.font-medium-3 {
+    font-size: 1.3rem!important;
+}
+.customizer .customizer-content {
+    position: relative;
+    height: 100%;
+}
+.ps-theme-dark {
+    -ms-touch-action: none;
+    touch-action: none;
+    overflow: hidden!important;
+    -ms-overflow-style: none;
+}
+.p-2 {
+    padding: 8.5rem 1rem !important;
+}
+.config_area{
+    list-style: none;
+    padding: 0;
+    li{
+        display: inline-block;
+        margin-right: 15px;
+    }
+}
+p{
+    font-size: 14px;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+.customizer-content button {
+    border: #2a3f54 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color:#2a3f54;
+    width: 80%;
+}
+
+
+    

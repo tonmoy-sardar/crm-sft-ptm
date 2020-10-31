@@ -1,0 +1,47 @@
+<loading [state]="loading">
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Reason for deal loss</h4>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body">
+        <div class="modal-body-container">
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col-sm-3 col-xs-3">
+            <label>Reason :</label>
+          </div>
+          <div class="col-sm-9 col-xs-9">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="reason" 
+                [ngClass]="displayFieldCss(form,'reason')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'reason')">Please Select Reason</div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <label>Remarks :</label>
+          </div>
+          <div class="col-sm-9 col-xs-9">
+            <div class="form-group">
+              <textarea class="form-control" formControlName="remarks" placeholder=""
+                [ngClass]="displayFieldCss(form,'remarks')"></textarea>
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'remarks')">Please Enter Remarks</div>
+            </div>
+          </div>
+  
+        </div>
+          
+        <div class="row">
+          <div class="col-sm-12 col-xs-12 text-center">
+            <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+            <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
+          </div>
+        </div> 
+      </form>
+    </div>
+    </div>
+  </div>
+  </loading>

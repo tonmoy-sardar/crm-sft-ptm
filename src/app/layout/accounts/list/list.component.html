@@ -1,0 +1,174 @@
+<div class="container-fluid below-top-bar">
+    <div class="row">
+        <div class="col-lg-3">
+            <form >
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for an Account/Opportunity" aria-label="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary top-form-btn" type="submit">Search</button>
+                      </span>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-lg-3">
+            <ng-select class="form-control form-control2 top-search" placeholder="Status">
+                <ng-option>Test</ng-option>
+            </ng-select>
+        </div>
+        <div class="col-lg-3  text-center">
+            <ng-select class="form-control form-control2 top-search" placeholder="Department">
+                <ng-option>Test</ng-option>
+            </ng-select>
+        </div>
+        <div class="col-lg-3 text-right">
+            <ng-select class="form-control form-control2 top-search" placeholder="Business Account">
+                <ng-option>Test</ng-option>
+            </ng-select>
+        </div>
+    </div>
+</div>
+<!-- <app-settings (click)="openSettings()"></app-settings> -->
+<!-- End of header -->
+<!-- Start of body -->
+<div class="clearfix"></div>
+<!-- <br> -->
+<div class="accounts">
+    <div class="row">
+        <div class="col-lg-12">
+           <div class="table-responsive scrollable-content no-scroll">
+                <table class="table table-bordered table-hover sticky text-center">
+                    <thead>
+                        <tr>                            
+                            <th scope="col" class="text-left">Business Account</th>
+                            <th scope="col">Account Manager</th>
+                            <th scope="col">Opportunity</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">BA assigned <i class="fa fa-filter" aria-hidden="true"></i></th>
+                            <th scope="col">Deal Value</th>  
+                            <th scope="col">RAG Status</th>                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8" class="accountrow">KGDF Bank</td>
+                        </tr>                        
+                        <tr>                           
+                            <td class="pocblock">
+                                <a class="link" (click)="viewPOCs()">POC Details</a> &nbsp;
+                                <a class="pull-right" (click)="addPOC()"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                <!-- <button class="btn" (click)="addPOC()">Add New POC</button> -->
+                            </td>
+                            <td>Moinak</td>
+                            <td>
+                                <a class="link" (click)="viewOpportunity(1)">Opportunity 1</a>&nbsp;&nbsp;
+                                <i class="fa fa-info-circle" aria-hidden="true" (mouseover)="viewOpportunityCard(1)"></i>
+                            </td>
+                            <td>Won</td>
+                            <td>PHP</td>
+                            <td>Diya</td>
+                            <td class="text-right">₹30000</td>  
+                            <td>
+                                <div class="rag-red">&nbsp;</div>
+                                <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> -->
+                            </td>                          
+                        </tr>
+                        <tr>
+                            <td class="pocblock">
+                                <a class="link" (click)="viewPOCs()">POC Details</a> &nbsp;
+                                <a class="pull-right" (click)="addPOC()"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                <!-- <button class="btn" (click)="addPOC()">Add New POC</button> -->
+                            </td> 
+                            <td>Moinak</td>                   
+                            <td><a class="link" (click)="viewOpportunity(2)">Opportunity 2</a>&nbsp;&nbsp;
+                                <i class="fa fa-info-circle" aria-hidden="true" (mouseover)="viewOpportunityCard(1)"></i></td>
+                            <td>Won</td>
+                            <td>PHP</td>
+                            <td>Diya</td>
+                            <td class="text-right">₹30000</td>    
+                            <td>
+                                <div class="rag-amber">&nbsp;</div>
+                                <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> -->
+                            </td>                       
+                        </tr>
+                        <tr>
+                            <td colspan="8" class="accountrow">KGDF Insurance</td>
+                        </tr>                        
+                        <tr>                           
+                            <td class="pocblock">
+                                <a class="link" (click)="viewPOCs()">POC Details</a> &nbsp;
+                                <a class="pull-right" (click)="addPOC()"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                <!-- <button class="btn" (click)="addPOC()">Add New POC</button> -->
+                            </td>
+                            <td>Moinak</td>
+                            <td><a class="link">Opportunity</a></td>
+                            <td>Won</td>
+                            <td>PHP</td>
+                            <td>Diya</td>
+                            <td class="text-right">₹30000</td>  
+                            <td>
+                                <div class="rag-green">&nbsp;</div>
+                                <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> -->
+                            </td>                          
+                        </tr>
+                        <tr>
+                            <td class="pocblock">
+                                <a class="link" (click)="viewPOCs()">POC Details</a> &nbsp;
+                                <a class="pull-right" (click)="addPOC()"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                <!-- <button class="btn" (click)="addPOC()">Add New POC</button> -->
+                            </td>      
+                            <td>Moinak</td>               
+                            <td><a class="link">Opportunity</a></td>
+                            <td>Loss</td>
+                            <td>PHP</td>
+                            <td>Taniya</td>
+                            <td class="text-right">₹30000</td>
+                            <td>
+                                <div class="rag-green">&nbsp;</div>
+                                <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> -->
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td colspan="8" class="accountrow">Shalldng</td>
+                        </tr>                        
+                        <tr>                           
+                            <td class="pocblock">
+                                <a class="link" (click)="viewPOCs()">POC Details</a> &nbsp;
+                                <a class="pull-right" (click)="addPOC()"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                <!-- <button class="btn" (click)="addPOC()">Add New POC</button> -->
+                            </td>
+                            <td>Moinak</td>
+                            <td><a class="link">Opportunity</a></td>
+                            <td>Won</td>
+                            <td>PHP</td>
+                            <td>Diya</td>
+                            <td class="text-right">₹30000</td>
+                            <td>
+                                <div class="rag-amber">&nbsp;</div>
+                                <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> -->
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td class="pocblock">
+                                <a class="link" (click)="viewPOCs()">POC Details</a> &nbsp;
+                                <a class="pull-right" (click)="addPOC()"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                <!-- <button class="btn" (click)="addPOC()">Add New POC</button> -->
+                            </td>    
+                            <td>Moinak</td>                
+                            <td><a class="link">Opportunity</a></td>
+                            <td>Won</td>
+                            <td>PHP</td>
+                            <td>Diya</td>
+                            <td class="text-right">₹30000</td>  
+                            <td>
+                                <div class="rag-red">&nbsp;</div>
+                                <!-- <i class="fa fa-info-circle" aria-hidden="true"></i> -->
+                            </td>                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+    </div>
+</div>

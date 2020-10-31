@@ -1,0 +1,61 @@
+<loading [state]="loading">
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Add POC</h4>
+      <button type="button" class="close" (click)="close(false)">×</button>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body">
+        <div class="modal-body-container">
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col-sm-3 col-xs-3">
+            <label>Name :</label>
+          </div>
+          <div class="col-sm-9 col-xs-9">
+            <div class="form-group">
+              <input class="form-control" formControlName="name" placeholder="Name" [ngClass]="displayFieldCss(form,'name')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'name')">Please Enter Name</div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <label>Email Id :</label>
+          </div>
+          <div class="col-sm-9 col-xs-9">
+            <div class="form-group">
+              <input class="form-control" formControlName="email" placeholder="Email Id" [ngClass]="displayFieldCss(form,'email')">
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'email')">Please Enter Email Id</div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <label>Job Title :</label>
+          </div>
+          <div class="col-sm-9 col-xs-9">
+            <div class="form-group">
+              <input class="form-control" formControlName="job_title" placeholder="Job Title" [ngClass]="displayFieldCss(form,'job_title')">
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'job_title')">Please Enter Job Title</div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <label>Contact Number :</label>
+          </div>
+          <div class="col-sm-9 col-xs-9">
+            <div class="form-group">
+              <input class="form-control" formControlName="phone" placeholder="Contact Number" [ngClass]="displayFieldCss(form,'phone')">
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'phone')">Please Enter Contact Number</div>
+            </div>
+          </div>  
+        </div>
+          
+        <div class="row">
+          <div class="col-sm-12 col-xs-12 text-right">
+            <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+            <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
+          </div>
+        </div> 
+      </form>
+    </div>
+    </div>
+  </div>
+  </loading>

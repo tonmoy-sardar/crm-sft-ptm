@@ -1,0 +1,194 @@
+<!--Navbar-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
+  <!-- Navbar brand -->
+  <a class="navbar-brand" (click)="goToSsil()"><img src="assets/img/logo.png"></a>
+  <!-- <span class="navbar-text white-text">
+    E-TASK SYSTEM
+  </span> -->
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto nav-flex-icons topform">
+      <li class="nav-item true dropdown">
+        <a class="nav-link waves-effect waves-light" id="navbarDropdownMenuLink4" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+          <i class="fa fa-bell"></i>
+          <span class="tab-badge notification-badge" *ngIf="notificationList.length>0">{{notificationList.length}}</span>
+        </a>
+        
+        <ul class="dropdown-menu">
+          <li class="head text-light bg-dark">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12">
+              </div>
+            </div>
+          </li>
+          <div style="overflow: auto;max-height: 281px;">
+          <li class="notification-box" (click)="viewNotification(notification,index)" *ngFor="let notification of notificationList; let i = index" style="overflow: auto; max-height: 281px;border-bottom: 1px solid #ededed;">
+            <div class="aap-notifications">
+              <p class="item-info">
+                <i aria-hidden="true" class="fa fa-tty" *ngIf="notification.notification.data.type=='follow_up'"></i>
+                <i aria-hidden="true" class="fa fa-tasks" *ngIf="notification.notification.data.type=='task'"></i>
+                <i aria-hidden="true" class="fa fa-handshake-o" *ngIf="notification.notification.data.type=='appointment'"></i>&nbsp;&nbsp;&nbsp;
+                {{notification.notification.title | slice: 0:30 }}{{notification.notification.title.length > 30 ? '...' : ''}}</p>
+                <p style="font-size: 12px;padding-left: 30px;color: #757575;">
+                  {{notification.notification.body | slice: 0:80 }}{{notification.notification.body.length > 80 ? '...' : ''}}
+                </p>
+                <div style="font-size: 10px;color: #929191;font-style: italic;text-align: right;
+                width: 100%;">{{notification.created_at | date: 'dd/MM/yyyy, hh:mm a'}}</div>
+            </div>
+          </li>
+        
+          <li class="notification-box" *ngIf="notificationList.length == 0" style="overflow: auto; max-height: 281px;border-bottom: 1px solid #ededed;">
+            <div class="aap-notifications">
+              <p class="item-info"><i aria-hidden="true" class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;No New Notification</p>
+            </div>
+          </li>
+          </div>
+        </ul>
+     
+      </li>   
+      <li class="nav-item true dropdown">
+        <a class="nav-link waves-effect waves-light" id="navbarDropdownMenuLink3" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+          <i class="fa fa-th"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="head text-light bg-dark">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12">
+              </div>
+            </div>
+          </li>
+          <li class="notification-box" style="overflow: auto; max-height: 281px;">
+            <div class="aapsection" *ngIf="is_superuser==true || is_superuser=='true'" (click)="goAdmin()">
+              <div class="aapimg"><img src="assets/img/users.png"></div>
+              <p class="item-info">System Config</p>
+            </div>
+
+            <div class="aapsection" (click)="goLanding()">
+              <div class="aapimg"><img src="assets/img/u55.png"></div>
+              <p class="item-info">Applications</p>
+            </div>
+            
+            <div *ngFor="let app of applicationList">
+              <div class="aapsection"  (click)="goPage(app.module.cm_url,app.module.id)" *ngIf="app.module.cm_name !='TMS'" style="cursor: pointer">
+                <div class="aapimg">
+                  <img *ngIf="app.module.cm_icon == null" src="assets/img/u55.png">
+                  <img *ngIf="app.module.cm_icon !== null" src="{{app.module.cm_icon}}">
+                </div>
+                <p class="item-info">{{app.module.cm_name}}</p>
+              </div>
+              <div class="aapsection"  (click)="goSpecialPage(app.module)" *ngIf="app.module.cm_name =='TMS'" style="cursor: pointer">
+                <div class="aapimg">
+                  <img *ngIf="app.module.cm_icon == null" src="assets/img/u55.png">
+                  <img *ngIf="app.module.cm_icon !== null" src="{{app.module.cm_icon}}">
+                </div>
+                <p class="item-info">{{app.module.cm_name}}</p>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+      </li>
+      <!-- <li class="nav-item bell dropdown">
+        <a class="nav-link waves-effect waves-light" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+          <i class="fa fa-bell"></i> <span>2</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="head text-light bg-dark">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12">
+                <h6>Notifications (2)</h6>
+                <a href="" class="float-right text-light">View all <i class="fa fa-arrow-circle-o-right fa-lg"
+                    aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </li>
+          <li class="notification-box">
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-3 text-center">
+                <img src="assets/img/100pixels1.gif" class="w-50 rounded-circle">
+              </div>
+              <div class="col-lg-8 col-sm-8 col-8">
+                <div>
+                  <p>New gift scheme is launched for dealers.</p>
+                  <small class="text-warning">28-11-2018 5:30 PM</small>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="notification-box bg-gray">
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-3 text-center">
+                <img src="assets/img/100pixels1.gif" class="w-50 rounded-circle">
+              </div>
+              <div class="col-lg-8 col-sm-8 col-8">
+                <div>
+                  <p>Official holiday has been rescheduled.</p>
+                  <small class="text-warning">28-11-2018 5:30 PM</small>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li> -->
+      <li class="nav-item user dropdown">
+        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+          <i class="fa fa-user"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="head text-light bg-dark">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12">
+              </div>
+            </div>
+          </li>
+          <!-- <li class="notification-box">
+            <div class="noti-img">
+              <img *ngIf="image == null || image == ''" src="assets/img/User-images.png">
+              <img *ngIf="image !== null || image !== ''" [src]="image">
+            </div>
+            <h5><strong class="text-info">{{name}}</strong></h5>
+            <p>{{email}}</p>
+          </li> -->
+          <li class="notification-box">
+            <div class="noti-img">
+              <img *ngIf="image == null || image == ''" src="assets/img/User-images.png">
+              <img *ngIf="image !== null || image !== ''" src={{image}}>
+            </div>
+            <div class="per-info">
+              <h5><strong class="text-info">{{name}}</strong></h5>
+              <p>{{email}}</p>
+            </div>
+          </li>
+          <li class="notification-box bg-gray">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12">
+                <div class="notification-item notification-item2">
+                  <button type="button" class="btn btn-primary btn-sm pull-left"
+                    [hidden]="is_superuser == true || is_superuser == 'true'" (click)="goprofile()">Account</button>
+                  <button type="button" class="btn btn-primary btn-sm pull-left"
+                    [hidden]="!is_superuser || is_superuser=='false'" (click)="gopass()">Change Password</button>
+                  <button type="button" class="btn btn-primary btn-sm pull-right" (click)='logout()'>Logout</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- Collapsible content -->
+</nav>
+<!--/.Navbar-->

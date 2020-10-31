@@ -1,0 +1,54 @@
+<div class="tab-pane">
+    <div class="container-fluid">
+        <app-settings (click)="openSettings()"></app-settings>        
+        <div class="container-fluid below-top-bar-lead">
+        <div class="row" *ngIf="activeTab == 'pipeline_snapshot'">
+            <div class="col-lg-3"></div>            
+            <div class="col-lg-4">
+                <form (ngSubmit)="submit()" >
+                    <div class="input-group pull-right">
+                        <input class="form-control" type="text" placeholder="Search" [(ngModel)]="search_key"
+                            [ngModelOptions]="{standalone: true}">
+                        <!-- <span class="input-group-btn"> -->
+                            <button class="btn search-btn btn-primary" type="submit">Search</button>
+                        <!-- </span> -->
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-2 text-right">                
+                <div class="custom_date_picker_form_control nopadding">
+                    <input class="form-control" (dateTimeChange)="formatHandler($event)" [owlDateTime]="dt1" [selectMode]="'range'"
+                      [owlDateTimeTrigger]="dt1" placeholder="From Date to To Date" [(ngModel)]="dateRange">
+                    <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+                    <i class="fa fa-calendar-o range-icon" aria-hidden="true" [owlDateTimeTrigger]="dt1"
+                      *ngIf="dateRange==null" title="Open"></i>
+                    <i class="fa fa-calendar-times-o range-icon range-icon" aria-hidden="true"
+                      (click)="dateTimeReset()" *ngIf="dateRange!=null" title="Close"></i>                
+                  </div>
+            </div>
+            <div class="col-lg-3 ">
+                <button class="btn pdf-btn">Export to PDF</button>&nbsp;
+                <button class="btn excel-btn">Export to Excel</button>&nbsp;
+            </div>              
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12" style="margin-top: 40px;">
+            <ngb-tabset #ctdTabset="ngbTabset" (tabChange)="onTabChange($event)">
+                <ngb-tab id="my_pipeline">
+                    <ng-template ngbTabTitle>My Pipeline </ng-template>
+                    <ng-template ngbTabContent>
+                            <app-my-pipeline></app-my-pipeline>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab id="pipeline_snapshot">
+                    <ng-template ngbTabTitle>Pipeline Snapshot </ng-template>
+                    <ng-template ngbTabContent>
+                            <app-pipeline-snapshot></app-pipeline-snapshot>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+    </div>
+</div>

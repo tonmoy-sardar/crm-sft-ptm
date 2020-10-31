@@ -1,0 +1,254 @@
+<div class="tab-pipeline-body">
+    <div class="row pipeline-steps">
+        <div class="col-md-2 requirement">
+            <label>Requirement Shared</label>
+            <p>Value: $2400000</p>
+        </div>
+        <div class="col-md-2 presales">
+            <label>Presales</label>
+            <p>Value: $2400000</p>
+        </div>
+        <div class="col-md-2 proposal">
+            <label>Proposal</label>
+            <p>Value: $2400000</p>
+        </div>
+        <div class="col-md-2 negotiation">
+            <label>Negotiation</label>
+            <p>Value: $2400000</p>
+        </div>
+        <div class="col-md-2 verbal">
+            <label>Verbal Commitment</label>
+            <p>Value: $2400000</p>
+        </div>
+        <div class="col-md-2 agreement">
+            <span>Value: $24000</span>
+            <label>Agreement</label>
+            <p>Value: $2400000</p>
+        </div>
+    </div>
+    <div class="row pipeline-process">
+
+        <div class="col-md-2 p-01">
+            <div
+              id="requirements"
+              class="drag-item-list"
+              cdkDropList
+              #requirementsList="cdkDropList"
+              [cdkDropListData]="requirements"
+              [cdkDropListConnectedTo]="[presalesList,wonCardBlock,lostCardBlock]"
+              (cdkDropListDropped)="drop($event)"
+              >
+              <div class="drag-item-box pipeline-card" *ngFor="let item of requirements" cdkDrag (cdkDragStarted)="dragStarted($event)"
+              >
+                <div class="drag-item-box-inner">
+                    <label>{{item.value}}
+                      <span class="company-icons">
+                        <!-- <a (click)="editTask()"><i aria-hidden="true" class="fa fa-pencil-square-o"></i></a> -->
+                        <a (click)="showTask()"><i aria-hidden="true" class="fa fa-exclamation"></i></a>
+                    </span>
+                    </label>
+                    
+                    <button class="btn {{item.btn}}" (click)="viewOpportunityDetails()">App Design</button>
+                    <p class="company-value">Value: ${{item.price}}</p><br>
+                    <div class="last-action">Last Action: 24/08/2020 13:00 HRS<br>
+                       Madhuparna Mitra</div>
+                </div>
+                <div class="drag-item-box-inner-action">
+                    <a (click)="addTask()"><i aria-hidden="true" class="fa fa-plus"></i></a>
+                </div>
+             
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-2 p-01">
+            <div
+              id="presales"
+              class="drag-item-list"
+              cdkDropList
+              #presalesList="cdkDropList"
+              [cdkDropListData]="presales"
+              [cdkDropListConnectedTo]="[proposalList,wonCardBlock,lostCardBlock]"
+              (cdkDropListDropped)="drop($event)">
+              <div class="drag-item-box pipeline-card" *ngFor="let item of presales" cdkDrag (cdkDragStarted)="dragStarted($event)"
+              >
+              <div class="drag-item-box-inner">
+                <label>{{item.value}}
+                  <span class="company-icons">
+                    <!-- <a (click)="editTask()"><i aria-hidden="true" class="fa fa-pencil-square-o"></i></a> -->
+                    <a (click)="showTask()"><i aria-hidden="true" class="fa fa-exclamation"></i></a>
+                </span>
+                </label>
+                
+                <button class="btn {{item.btn}}" (click)="viewOpportunityDetails()">App Design</button>
+                <p class="company-value">Value: ${{item.price}}</p>
+                <label class="ba-name">BA: Manoj</label><br>
+                <div class="last-action">Last Action: 24/08/2020 13:00 HRS<br>
+                   Madhuparna Mitra</div>
+            </div>
+            <div class="drag-item-box-inner-action">
+                <a (click)="addTask()"><i aria-hidden="true" class="fa fa-plus"></i></a>
+            </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-2 p-01">
+            <div
+              id="proposal"
+              class="drag-item-list"
+              cdkDropList
+              #proposalList="cdkDropList"
+              [cdkDropListData]="proposal"
+              [cdkDropListConnectedTo]="[negotitionList,wonCardBlock,lostCardBlock]"
+              (cdkDropListDropped)="drop($event)">
+              <div class="drag-item-box pipeline-card" *ngFor="let item of proposal" cdkDrag (cdkDragStarted)="dragStarted($event)"
+              >
+              <div class="drag-item-box-inner">
+                <label>{{item.value}}
+                  <span class="company-icons">
+                    <!-- <a (click)="editTask()"><i aria-hidden="true" class="fa fa-pencil-square-o"></i></a> -->
+                    <a (click)="showTask()"><i aria-hidden="true" class="fa fa-exclamation"></i></a>
+                </span>
+                </label>
+                
+                <button class="btn {{item.btn}}" (click)="viewOpportunityDetails()">App Design</button>
+                <p class="company-value">Value: ${{item.price}}</p>
+                <label class="ba-name">BA: Manoj</label><br>
+                <div class="last-action">Last Action: 24/08/2020 13:00 HRS<br>
+                   Madhuparna Mitra</div>
+            </div>
+            <div class="drag-item-box-inner-action">
+                <a (click)="addTask()"><i aria-hidden="true" class="fa fa-plus"></i></a>
+            </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 p-01">
+            <div
+              id="negotiation"
+              class="drag-item-list"
+              cdkDropList
+              #negotitionList="cdkDropList"
+              [cdkDropListData]="negotition"
+              [cdkDropListConnectedTo]="[verbalList,wonCardBlock,lostCardBlock]"
+              (cdkDropListDropped)="drop($event)">
+              <div class="drag-item-box pipeline-card" *ngFor="let item of negotition" cdkDrag (cdkDragStarted)="dragStarted($event)"
+              >
+                  <div class="drag-item-box-inner">
+                    <label>{{item.value}}
+                      <span class="company-icons">
+                        <!-- <a (click)="editTask()"><i aria-hidden="true" class="fa fa-pencil-square-o"></i></a> -->
+                        <a (click)="showTask()"><i aria-hidden="true" class="fa fa-exclamation"></i></a>
+                    </span>
+                    </label>
+                    
+                    <button class="btn {{item.btn}}" (click)="viewOpportunityDetails()">App Design</button>
+                    <p class="company-value">Value: ${{item.price}}</p>
+                    <label class="ba-name">BA: Manoj</label><br>
+                    <div class="last-action">Last Action: 24/08/2020 13:00 HRS<br>
+                      Madhuparna Mitra</div>
+                </div>
+                <div class="drag-item-box-inner-action">
+                    <a (click)="addTask()"><i aria-hidden="true" class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 p-01">
+            <div
+              id="verbal"
+              class="drag-item-list"
+              cdkDropList
+              #verbalList="cdkDropList"
+              [cdkDropListData]="verbal"
+              [cdkDropListConnectedTo]="[agreementList,wonCardBlock,lostCardBlock]"
+              (cdkDropListDropped)="drop($event)">
+              <div class="drag-item-box pipeline-card" *ngFor="let item of verbal" cdkDrag (cdkDragStarted)="dragStarted($event)"
+              >
+                  <div class="drag-item-box-inner">
+                    <label>{{item.value}}
+                      <span class="company-icons">
+                        <!-- <a (click)="editTask()"><i aria-hidden="true" class="fa fa-pencil-square-o"></i></a> -->
+                        <a (click)="showTask()"><i aria-hidden="true" class="fa fa-exclamation"></i></a>
+                    </span>
+                    </label>
+                    
+                    <button class="btn {{item.btn}}" (click)="viewOpportunityDetails()">App Design</button>
+                    <p class="company-value">Value: ${{item.price}}</p>
+                    <label class="ba-name">BA: Manoj</label><br>
+                    <div class="last-action">Last Action: 24/08/2020 13:00 HRS<br>
+                       Madhuparna Mitra</div>
+                </div>
+                <div class="drag-item-box-inner-action">
+                    <a (click)="addTask()"><i aria-hidden="true" class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 p-01">
+            <div
+              id="agreement"
+              class="drag-item-list"
+              cdkDropList
+              #agreementList="cdkDropList"
+              [cdkDropListData]="agreement"
+              [cdkDropListConnectedTo]="[wonCardBlock,lostCardBlock]"
+              (cdkDropListDropped)="drop($event)">
+              <div class="drag-item-box pipeline-card" *ngFor="let item of agreement" cdkDrag (cdkDragStarted)="dragStarted($event)"
+              >
+                  <div class="drag-item-box-inner">
+                    <label>{{item.value}}
+                      <span class="company-icons">
+                        <!-- <a (click)="editTask()"><i aria-hidden="true" class="fa fa-pencil-square-o"></i></a> -->
+                        <a (click)="showTask()"><i aria-hidden="true" class="fa fa-exclamation"></i></a>
+                    </span>
+                    </label>
+                    
+                    <button class="btn {{item.btn}}" (click)="viewOpportunityDetails()">App Design</button>
+                    <p class="company-value">Value: ${{item.price}}</p>
+                    <label class="ba-name">BA: Manoj</label><br>
+                    <div class="last-action">Last Action: 24/08/2020 13:00 HRS<br>
+                      Madhuparna Mitra</div>
+                </div>
+                <div class="drag-item-box-inner-action">
+                    <a (click)="addTask()"><i aria-hidden="true" class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-12 won-lost-section" [ngClass]="{'activeDraggable': showWonLost == true}">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3 text-center">
+                    <div 
+                    cdkDropList 
+                    #wonCardBlock="cdkDropList" 
+                    [cdkDropListData]="wonCard"
+                    (cdkDropListDropped)="wonDrop($event)"
+                    class="won-list-boundary">
+                        <button class="btn btn-success won-btn">Won</button>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div 
+                    cdkDropList 
+                    #lostCardBlock="cdkDropList" 
+                    [cdkDropListData]="lostCard"
+                    (cdkDropListDropped)="lostDrop($event)"
+                    class="won-list-boundary">
+                        <button class="btn btn-danger won-btn">Lost</button>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            
+            
+          </div>
+    
+    </div>
+</div>
+
+
+  

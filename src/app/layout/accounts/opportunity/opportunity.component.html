@@ -1,0 +1,46 @@
+<div class="tab-pane">
+    <div class="container-fluid">
+        <div class="container-fluid below-top-bar position-absolute" style="right: 0px;">
+            <div class="row">
+                
+                <div class="col-lg-6 header-text">
+                    <span class="mr-3">Opportunity Name: XYZ </span>
+                    <span class="mr-3">SPOC: XYZ</span>
+                    <span class="mr-3">Deal Value: XYZ</span>
+                    <span class="mr-3">Prospected By: XYZ</span>
+                </div>
+                <div class="col-lg-3"></div>
+                <div class="col-lg-3 text-right">
+                    <button class="btn main-btn btn-primary" *ngIf="activeTab == 'payment_milestone'">Add Milestone</button>&nbsp;
+                    <!-- <button class="btn main-btn btn-primary" *ngIf="activeTab == 'opportunity_details'">Edit Opportunity</button>&nbsp; -->
+                    <button class="btn main-btn btn-primary" (click)="back()">Back to Accounts</button>
+                </div>
+            </div>
+        </div>
+        <!-- <app-settings (click)="openSettings()"></app-settings> -->
+        <!-- End of header -->
+        <!-- Start of body -->
+        <div class="clearfix"></div>
+        <!-- <br> -->
+        <div class="accounts">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ngb-tabset class="report-tabs" #ctdTabset="ngbTabset" (tabChange)="onTabChange($event)">
+                        <ngb-tab id="opportunity_details">
+                            <ng-template ngbTabTitle>Opportunity Details </ng-template>
+                            <ng-template ngbTabContent>
+                                <app-opportunity-details></app-opportunity-details>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab id="payment_milestone">
+                            <ng-template ngbTabTitle>Payment & Milestone </ng-template>
+                            <ng-template ngbTabContent>
+                                <app-payment-milestone></app-payment-milestone>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

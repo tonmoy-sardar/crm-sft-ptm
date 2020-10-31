@@ -1,0 +1,61 @@
+<loading [state]="loading">
+    <div class="container-fluid below-top-bar">
+        <div class="row">
+            <div class="col-lg-6 text-left">Technologies</div>
+            <div class="col-lg-6 text-right">
+                <button class="btn btn-primary" (click)="addTechnology()">Add Technology</button>
+            </div>
+        </div>
+    </div>
+    <app-settings (click)="openSettings()"></app-settings>
+    <!-- End of header -->
+    <!-- Start of body -->
+    <div class="clearfix"></div>
+    <div class="settings row">
+        <div class="col-md-12 xs-12">
+            <div class="table-responsive scrollable-content">
+                <table class="table table-bordered table-hover sticky text-center">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Sl No.</th>
+                            <th class="text-left">Name</th>
+                            <th>Created On</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let technology of technologyList; let i = index" class="animated flipInX delay-15s">
+                            <td class="text-left">{{i+1}}</td>
+                            <td class="text-left">{{technology.name}}</td>
+                            <td>{{technology.created_at | date}}</td>
+                            <td>
+                                <a (click)="editTechnology(technology)" href="javascript:void(0)"><i
+                                        class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a> &nbsp;
+                                <a (click)="deleteTechnology(technology.id, i)" href="javascript:void(0)"><i
+                                        class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                        <tr *ngIf="technologyList.length == 0">
+                            <td colspan="4" class="text-center">Data not Found !</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="settings row" *ngIf="totalTechnology > 10">
+        <div class="col-md-6">
+            <div class="pull-left">
+                <app-item-per-page-filer [item]="itemPerPage"
+                    (countSelectionChanged)="onListCountSelectionChange($event)">
+                </app-item-per-page-filer>
+            </div>
+        </div>
+        <div class="col-md-6" *ngIf="totalTechnology > itemPerPage">
+            <div class="pull-right">
+                <ngb-pagination [collectionSize]="totalTechnology" [maxSize]="paginationMaxSize" [pageSize]="pageSize"
+                    [(page)]="defaultPagination" (pageChange)="pagination()" size="sm"></ngb-pagination>
+            </div>
+        </div>
+    </div>
+</loading>

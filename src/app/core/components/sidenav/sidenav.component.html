@@ -1,0 +1,46 @@
+<!-- Sidebar  -->
+<nav id="sidebar" [ngClass]="{'active': isSidebar}">
+  <div class="sidebar-header">
+    <button type="button" id="sidebarCollapse" class="btn btn-info topbtn " (click)="sideBarToggle()">
+      <i class="fa fa-bars " aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class=" clearfix"></div>
+  <ul class="list-unstyled components">
+    <!-- <li *ngFor="let menu of navItems">
+      <a (click)="menuTap(menu)" *ngIf="menu.havePermission>0">
+        <i [class]="menu.icon" aria-hidden="true"></i>
+        {{menu.name}}
+        <i *ngIf="menu.isSubMenu" class="fa pull-right" [ngClass]="menu.isOpen ? 'fa-angle-up' : 'fa-angle-down'" aria-hidden="true"></i>
+      </a>
+      <ul *ngIf="menu.isSubMenu && menu.isOpen" >
+        <li *ngFor="let subMenu of menu['items']">
+          <a (click)="menuTap(subMenu)" *ngIf="subMenu.havePermission>0">
+            <i [class]="subMenu.icon" aria-hidden="true"></i>
+            {{subMenu.name}}
+          </a>
+        </li>
+      </ul>
+    </li> -->
+    <li *ngFor="let menu of navItems" >
+      <a  *ngIf="menu.havePermission>0 && menu.isSubMenu == false && menu.teamRequired == false" routerLink="/{{menu.link}}" routerLinkActive="active" >
+        <i [class]="menu.icon" aria-hidden="true"></i>
+        {{menu.name}}
+        <i *ngIf="menu.isSubMenu" class="fa pull-right" [ngClass]="menu.isOpen ? 'fa-angle-up' : 'fa-angle-down'" aria-hidden="true"></i>
+      </a>
+      <a  *ngIf="menu.havePermission>0 && menu.isSubMenu == true && menu.teamRequired == false" (click)="menuTap(menu)">
+        <i [class]="menu.icon" aria-hidden="true"></i>
+        {{menu.name}}
+        <i *ngIf="menu.isSubMenu" class="fa pull-right" [ngClass]="menu.isOpen ? 'fa-angle-up' : 'fa-angle-down'" aria-hidden="true"></i>
+      </a>
+      <ul *ngIf="menu.isSubMenu && menu.isOpen" >
+        <li *ngFor="let subMenu of menu['items']" >
+          <a routerLink="/{{subMenu.link}}" routerLinkActive="active" *ngIf="menu.havePermission>0 && menu.teamRequired == false">
+            <i [class]="subMenu.icon" aria-hidden="true"></i>
+            {{subMenu.name}}
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

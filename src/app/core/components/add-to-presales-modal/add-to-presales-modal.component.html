@@ -1,0 +1,90 @@
+<loading [state]="loading">
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Add to Presales</h4>
+      <button type="button" class="close" (click)="close(false)">×</button>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body">
+        <div class="modal-body-container">
+      <form [formGroup]="form">
+        <div class="row">          
+          <div class="col-sm-6 col-xs-6">
+            <div class="form-group">
+                <ng-select [items]="ba" class="form-control form-control2 top-search" formControlName="ba" placeholder="Select Business Analyst" [ngClass]="displayFieldCss(form,'ba')">
+                  
+                  <ng-template ng-label-tmp let-item="item" let-clear="clear">
+                    <span class="ng-value-label dropdown-placeholder">{{item.name}}</span>
+                    <span class="ng-value-icon right" (click)="clear(item)" aria-hidden="true">×</span>
+                  </ng-template>
+                  
+                  <ng-template ng-option-tmp let-item="item">
+                    <div class="dropdown-icons">{{item.name}} 
+
+                        <ng-container *ngIf="item.available == 1"><div class="counts bg-success"></div><div class="avaibility success">{{item.number}}</div></ng-container>
+                        <ng-container *ngIf="item.available == 2"><div class="counts bg-warning"></div><div class="avaibility warning">{{item.number}}</div></ng-container>
+                        <ng-container *ngIf="item.available == 3"><div class="counts bg-danger"></div><div class="avaibility danger">{{item.number}}</div></ng-container>
+                    </div>
+                </ng-template>
+                </ng-select>
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'ba')">Please Select Business Analyst</div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-6">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="project_lead" placeholder="Select Project Lead" [ngClass]="displayFieldCss(form,'project_lead')">
+                    <ng-option>Test</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'project_lead')">Please Select Project Lead</div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-6">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="department" placeholder="Select Department" [ngClass]="displayFieldCss(form,'department')">
+                    <ng-option>Test</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'department')">Please Select Department</div>
+            </div>
+          </div>         
+          <div class="col-sm-6 col-xs-6">
+            <div class="input-group">
+              <div style="float: left;width: 68%;">
+                <input type="text" class="form-control" formControlName="document_name" placeholder="Upload a scope of work">
+              </div>
+              <div style="float: right;">
+              <label class="input-group-btn document-label">
+                
+               
+                <span class="btn btn-file">
+                    Browse... <input style="display: none;" type="file" (change)="onSelectFile($event)" formControlName="file">
+                    <input  class="form-control"  type="hidden" value="" formControlName="document" 
+                    [ngClass]="displayFieldCss(form,'document')" 
+                    >
+                </span>
+              
+              </label>
+            </div>
+
+            <span style="font-size: 10px;">Only PDF,DOC and file can be uploaded.</span>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'document')" style="display: block;">Please Upload a scope of work</div>
+
+          </div>
+            <!-- <div class="form-group">
+              <input type="file" class="form-control" formControlName="scope" placeholder="Upload a scope of work" [ngClass]="displayFieldCss(form,'scope')">
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'scope')">Please Upload a scope of work</div>
+            </div> -->
+          </div>  
+        </div>
+          
+        <div class="row">
+          <div class="col-sm-12 col-xs-12 text-center">
+            <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+            <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
+          </div>
+        </div> 
+      </form>
+    </div>
+    </div>
+  </div>
+  </loading>

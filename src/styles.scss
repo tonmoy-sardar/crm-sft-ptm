@@ -1,0 +1,222 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "assets/css/font-awesome.min.css";
+@import "assets/css/bootstrap.min.css";
+@import "assets/css/mdb.min.css";
+@import "assets/css/compiled-4.5.15.min.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import '~flatpickr/dist/flatpickr.css';
+@import "assets/css/style.css";
+// html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// 04-03-2019(Manna)
+.mat-dialog-container{
+    padding: 5px !important;
+}
+
+select {
+  display: block !important;
+}
+
+.cdk-overlay-container {
+  z-index: 99999;
+}
+
+.mat-focused {
+  border: none !important;
+}
+
+.owl-dt-inline,
+.owl-dt-inline .owl-dt-inline-container {
+  width: 100%;
+}
+
+.owl-dt-inline .owl-dt-inline-container {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+.recent_event {
+  margin-top: 20px;
+  height: 338px;
+  overflow-y: scroll;
+}
+
+.recent_event::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.recent_event::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+.recent_event::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+.recent_event ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.recent_event ul li {
+  padding: 5px 0;
+}
+.recent_event ul li ul li {
+  border-bottom: 1px solid #e6e3e3;
+}
+
+.recent_event ul span.hdng {
+  color: #33b5e5;
+  font-size: 15px;
+}
+
+.recent_event ul ul {}
+
+.recent_event ul ul span {
+  font-size: 12px;
+}
+.cal-week-view .cal-event{
+  color: #0c6d0c;
+}
+
+.recent_event ul ul span {}
+
+.recent_event ul ul span.time {
+  float: right;
+  font-size: 12px;
+  margin-right: 18px;
+  margin-top: 5px;
+}
+.recent_event .hdng{
+  background: #33b5e5;
+  padding: 3px 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+.cal-header{
+  background: #fbfbfb;
+  
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-whatsapp {
+  background: #58b358;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: linear-gradient(to top, #db8743 0%, #b62c72 100%);
+  color: white;
+}
+
+.page-footer .btn-floating i {
+    line-height: 31px;
+    font-size: 1rem;
+}
+.per-info {
+  word-break: break-word;
+  padding: 2px;
+}
+
+.inline-block {
+  display: inline-block;
+  font-size: 12px;
+  padding: 10px 0px;
+  font-weight: 600;
+}
+
+.mat-radio-label {
+  white-space: normal !important;
+}
+
+.fixed-top{
+  z-index: 10309;
+}
+
+.popup-cancel-btn{
+  background: #ce0012 !important;
+}
+
+.main-btn
+{
+  padding: 3px 9px !important;
+  font-size: 13px !important; 
+  margin: 0px 0px 0px 10px !important;
+}
+
+.small-btn
+{
+  padding: 2px 10px !important;
+  font-size: 11px !important; 
+  margin: 0px 0px 0px 10px !important;
+}
+
+.excel-btn
+{
+  padding: 3px 9px !important;
+  font-size: 13px !important; 
+  margin: 0px 0px 0px 10px !important;
+  background-color:#1F7244 !important;
+}
+
+.pdf-btn
+{
+  padding: 3px 9px !important;
+  font-size: 13px !important; 
+  margin: 0px 0px 0px 10px !important;
+  background-color:#E12025 !important;
+}
+
+.submit-main-btn
+{
+  padding: 5px 20px !important;
+  font-size: 13px !important; 
+  margin: 0px 0px 0px 0px !important;
+}
+
+
+.custom-scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}

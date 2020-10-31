@@ -1,0 +1,198 @@
+<div class="container-fluid below-top-bar">
+    <div class="row">
+        <div class="col-lg-1 text-right"><label>From: </label></div>
+        <div class="col-lg-3 text-left">            
+            <div class="custom_date_picker_form_control">
+                <input class="form-control" (dateTimeChange)="formatHandler($event)" [owlDateTime]="dt1" placeholder="Select From Date" [(ngModel)]="from_date" [owlDateTimeTrigger]="dt1">
+                <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+                <i class="fa fa-calendar icon-on-input" aria-hidden="true" [owlDateTimeTrigger]="dt1"
+                  *ngIf="from_date==null" title="Open"></i>
+                <i class="fa fa-calendar-times-o icon-on-input" aria-hidden="true" (click)="fromDateReset()"
+                  *ngIf="from_date!=null" title="Close"></i>
+            </div>
+        </div>
+        <div class="col-lg-1 text-right"><label>To: </label></div>
+        <div class="col-lg-3 text-left"> 
+            <div class="custom_date_picker_form_control">
+                <!-- <label>To:                      -->
+                    <input class="form-control" (dateTimeChange)="formatHandler($event)" [owlDateTime]="dt2" placeholder="Select To Date" [(ngModel)]="to_date" [owlDateTimeTrigger]="dt2">
+                    <owl-date-time #dt2 [pickerType]="'calendar'"></owl-date-time>
+                    <i class="fa fa-calendar icon-on-input" aria-hidden="true" [owlDateTimeTrigger]="dt2"
+                    *ngIf="to_date==null" title="Open"></i>
+                    <i class="fa fa-calendar-times-o icon-on-input" aria-hidden="true" (click)="toDateReset()"
+                    *ngIf="to_date!=null" title="Close"></i>
+                <!-- </label>             -->
+            </div>            
+        </div>
+        <div class="col-lg-2 text-right"></div>
+        <!-- <div class="col-lg-1 text-left">            
+            <ng-select class="form-control form-control2 top-search" placeholder="2020">
+                <ng-option>2020</ng-option>
+            </ng-select>
+        </div>         -->
+        <!-- <div class="col-lg-2 text-left team-members">
+            <ng-select class="form-control form-control2 top-search" [(ngModel)]="selectedEmployee" placeholder="Select Employee" [clearable]="false">
+                <ng-option value="all">All</ng-option>
+                <ng-option value="Madhuparna">Madhuparna</ng-option>
+            </ng-select>
+        </div> -->
+    </div>
+</div>
+<!-- <app-settings (click)="openSettings()"></app-settings> -->
+<!-- End of header -->
+<!-- Start of body -->
+<div class="clearfix"></div>
+<div class="close-won">
+    <!-- Bar Graph -->
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <ngx-charts-bar-vertical *ngIf="saleData.length>0" 
+                [view]="viewHW"
+                [results]="saleData"
+                [xAxisLabel]="'Month'"
+                [legendTitle]="'Loss Analysis Chart'"
+                [yAxisLabel]="'Amount'"
+                [legend]="false"
+                [showXAxisLabel]="true"
+                [showYAxisLabel]="true"
+                [xAxis]="true"
+                [yAxis]="true"
+                [scheme]="'flame'"    
+                [gradient]="false">
+            </ngx-charts-bar-vertical>
+        </div>
+    </div>
+    <div class="row total-block">
+        <div class="col-lg-12 font-weight-bold">
+            Total Value: &nbsp;₹10,00,50000
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 block">
+            Total Leads: 20
+        </div>
+        <div class="col-lg-7"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 block">
+            Loss Opportunities: 15
+        </div>
+        <div class="col-lg-7"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 pt-2 pb-40">
+           <div class="table-responsive scrollable-content no-scroll">
+                <table class="table table-bordered table-hover sticky text-center">
+                    <thead>
+                        <tr>                       
+                            <th scope="col" class="text-left">Opportunity Name</th>
+                            <th scope="col" class="text-right">Value</th>
+                            <th scope="col">Deal Creation Date</th>                            
+                            <th scope="col">Deal Lost Date</th>
+                            <!-- <th scope="col">Reason for Loss</th>                             -->
+                            <th scope="col">Remarks</th>                         
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td>  
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                          
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td> 
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                              
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td>
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                               
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td> 
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                              
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td> 
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                              
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td>  
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                             
+                        </tr>                                              
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td> 
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                              
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td>  
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                             
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td> 
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                              
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td>   
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                            
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td> 
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                              
+                        </tr>
+                        <tr>                      
+                            <td class="text-left">Lorem Ipsum is dummy text</td>
+                            <td class="text-right">₹24500</td>
+                            <td>10-07-2020</td>
+                            <td>23-07-2020</td> 
+                            <!-- <td class="text-left">Lorem ipsum is a dummy text</td> -->
+                            <td class="text-left">Lorem ipsum is a dummy text</td>                              
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+    </div>
+</div>

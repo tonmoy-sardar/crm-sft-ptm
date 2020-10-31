@@ -1,0 +1,73 @@
+<loading [state]="loading">
+  <div class="modal-content">
+  <!-- Modal Header -->
+  <div class="modal-header">
+    <h4 class="modal-title">Add Task</h4>
+    <button type="button" class="close" (click)="close(false)">×</button>
+  </div>
+  <!-- Modal body -->
+  <div class="modal-body">
+      <div class="modal-body-container">
+    <form [formGroup]="form" (ngSubmit)="formSubmit()">
+      <div class="row">
+        <div class="col-sm-3 col-xs-3">
+          <label>Task Name :</label>
+        </div>
+        <div class="col-sm-9 col-xs-9">
+          <div class="form-group">
+            <input class="form-control" formControlName="task_name" placeholder=""
+              [ngClass]="displayFieldCss(form,'task_name')">
+           <div class="invalid-feedback" *ngIf="isFieldValid(form,'task_name')">Please Enter Task Name</div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-3">
+          <label>Date :</label>
+        </div>
+        <div class="col-sm-4 col-xs-4">
+          <div class="form-group">
+            <input class="form-control" formControlName="date" placeholder="dd/mm/yyyy"
+              [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
+              [ngClass]="displayFieldCss(form,'date')" (dateTimeChange)="formatHandler()">
+              <i class="fa fa-calendar icon-on-input" aria-hidden="true"></i>
+
+            <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'date')">Please Select Date</div>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-2">
+          <label>Time :</label>
+        </div>
+        <div class="col-sm-3 col-xs-3">
+          <div class="form-group">
+            <input class="form-control" formControlName="time" placeholder="hh:mm"
+              [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+              [ngClass]="displayFieldCss(form,'time')">
+            <owl-date-time #dt2 [pickerType]="'timer'"></owl-date-time>
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'time')">Please Select Time</div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-xs-3">
+          <label>Remarks :</label>
+        </div>
+        <div class="col-sm-9 col-xs-9">
+          <div class="form-group">
+            <textarea class="form-control" formControlName="remarks" placeholder=""
+              [ngClass]="displayFieldCss(form,'remarks')"></textarea>
+          <div class="invalid-feedback" *ngIf="isFieldValid(form,'remarks')">Please Enter Remarks</div>
+          </div>
+        </div>
+
+      </div>
+        
+      <div class="row">
+        <div class="col-sm-12 col-xs-12 text-right">
+          <button type="submit" class="btn btn-primary modal-save-btn" >SAVE</button>
+          <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
+        </div>
+      </div> 
+    </form>
+  </div>
+  </div>
+</div>
+</loading>

@@ -1,0 +1,35 @@
+<div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+        <h4 class="modal-title">{{data.title}}</h4>
+        <button type="button" class="close" (click)="close(false)">×</button>
+    </div>
+    <!-- Modal body -->
+    <form [formGroup]="form">
+        <div class="modal-body">
+            <div class="modal-body-container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-6">
+                        <label>Department Name</label>
+                    </div>
+                    <div class="col-sm-8 col-xs-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Department Name" formControlName="name"
+                                [ngClass]="displayFieldCss(form,'name')" [(ngModel)]="departmentData.name">
+                            <div class="invalid-feedback" *ngIf="isFieldValid(form,'name')">Please Enter Department Name
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-4"></div>
+                    <div class="col-sm-8 col-xs-8 text-right">
+                        <button type="button" class="btn btn-primary modal-save-btn"  [disabled]="is_disabled" (click)="submit()">SAVE</button>
+                        <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

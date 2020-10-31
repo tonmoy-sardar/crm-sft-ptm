@@ -1,0 +1,312 @@
+<loading [state]="loading">
+    <app-below-top-nav (emitLead)="flushList($event)" (emitSearch)="searchEvent($event)" (emitFilterData)="filterLead($event)"></app-below-top-nav>
+    <app-settings (click)="openSettings()"></app-settings>
+    <div class="leads-pane">
+        <div class="row">
+            <div class="col-lg-12">
+               <div class="table-responsive scrollable-content">
+                    <table class="table table-bordered table-striped table-hover custom-table">
+                        <thead class="thead-dark blue-thead">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">Business Name</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Country</th>
+                                <th scope="col">Contact No</th>
+                                <th scope="col">Email Id</th>
+                                <th scope="col">Source</th>
+                                <th scope="col" class="text-right">Status</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="single-border-td">
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-warning">4</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-warning">4</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-warning">4</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-danger">7</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-danger">7</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-danger">7</div></td>
+                                <td>
+                                    <a (click)="showTask()"><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+                                </td>
+                                <td>KGDF Bank</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>USA</td>
+                                <td>2314784209</td>
+                                <td>john@gmail.com</td>
+                                <td>Facebook</td>
+                                <td align="right">Not Contacted</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Opportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>                      
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+        </div>
+    </div>
+</loading>

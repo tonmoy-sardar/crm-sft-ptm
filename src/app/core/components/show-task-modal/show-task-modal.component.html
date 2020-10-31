@@ -1,0 +1,75 @@
+<loading [state]="loading">
+  <div class="modal-content">
+
+    <div class="modal-body custom-scroll" style="max-height: 550px; overflow-y: auto;">
+      <button type="button" class="close" (click)="close(false)">×</button><br>
+      <div class="modal-body-container-simple">
+        <div class="row" *ngIf="!showForm">
+          <ng-container *ngFor="let task of taskList">
+            <div class="col-sm-12 col-xs-12">
+              <label>{{task.name}}</label>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+              <label>Date: {{task.date_time | date:'dd/MM/yyyy'}} Time {{task.date_time | date:'HH:mm a'}}</label>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+              <a (click)="markAsComplete(task.id, i)"><label class="color-anchor">Mark as completed</label></a>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+              <a (click)="reschedule(task.id)"><label class="color-anchor">Reschedule</label></a>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+              <hr>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="taskList.length == 0">
+            <div class="col-sm-12 col-xs-12">
+              <label>No Data Found</label>
+            </div>
+
+          </ng-container>
+        </div>
+
+        <form [formGroup]="form" *ngIf="showForm">
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 text-center">
+              <h4>Reschedule</h4>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+              <label>Date :</label>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+              <div class="form-group">
+                <input class="form-control" formControlName="date" placeholder="" [owlDateTimeTrigger]="dt1" [min]="minDate"
+                  [owlDateTime]="dt1" [ngClass]="displayFieldCss(form,'date')" (dateTimeChange)="formatHandler()">
+                <i class="fa fa-calendar icon-on-input" aria-hidden="true"></i>
+
+                <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+                <div class="invalid-feedback" *ngIf="isFieldValid(form,'date')">Please Select Date</div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+              <label>Time :</label>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+              <div class="form-group">
+                <input class="form-control" formControlName="time" placeholder="" [owlDateTimeTrigger]="dt2" [min]="minTime" [max]="maxTime"
+                  [owlDateTime]="dt2" [ngClass]="displayFieldCss(form,'time')">
+                <owl-date-time #dt2 [pickerType]="'timer'"></owl-date-time>
+                <div class="invalid-feedback" *ngIf="isFieldValid(form,'time')">Please Select Time</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 text-center">
+              <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+              <button type="button" class="btn btn-danger modal-cancel-btn" (click)="closeform()">CANCEL</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</loading>

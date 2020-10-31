@@ -1,0 +1,16 @@
+<div class="fixed-top main-nav">
+<ul class="top-nav">
+    <ng-container *ngFor="let nav of navList ; let i = index">
+        <li [ngClass]="{'active': nav.selected}"  (click)="goto(nav)">
+            <a>
+                <i [ngClass]="nav.icon" aria-hidden="true"></i>  {{nav.title}}
+            </a>
+        </li>
+    </ng-container>
+    <!-- <li [ngClass]="{'active': selectedItem == 'leads'}"><a [routerLink]="['/leads']" (click)="goToMenu('leads')"><i class="fa fa-leanpub" aria-hidden="true"></i> Leads</a></li>
+    <li [ngClass]="{'active': selectedItem == 'pipeline'}"><a [routerLink]="['/pipeline']" (click)="goToMenu('pipeline')"><i class="fa fa-trophy" aria-hidden="true"></i>  Pipeline</a></li>
+    <li [ngClass]="{'active': selectedItem == 'accounts'}"><a [routerLink]="['/accounts']" (click)="goToMenu('accounts')"><i class="fa fa-money" aria-hidden="true"></i>   Accounts</a></li>
+    <li [ngClass]="{'active': selectedItem == 'close_won'}"><a [routerLink]="['/close_won']" (click)="goToMenu('close_won')"><i class="fa fa-pie-chart" aria-hidden="true"></i> Close Won</a></li>
+    <li [ngClass]="{'active': selectedItem == 'loss_analysis'}"><a [routerLink]="['/loss_analysis']" (click)="goToMenu('loss_analysis')"><i class="fa fa-line-chart" aria-hidden="true"></i> Loss Analysis</a></li> -->
+</ul>
+</div>

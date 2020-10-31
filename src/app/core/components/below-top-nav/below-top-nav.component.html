@@ -1,0 +1,32 @@
+<div class="container-fluid below-top-bar">
+    <div class="row">
+        <div class="col-lg-4">
+                <form (ngSubmit)="submit()">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for a lead" [(ngModel)]="search_key" [ngModelOptions]="{standalone: true}">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary top-form-btn" type="submit" >Search</button>
+                      </span>
+                </div>
+                </form>
+        </div>
+        <div class="col-lg-3">
+            <ng-select class="form-control form-control2 top-search" placeholder="Please Select" (change)="filterLead($event)">
+                <ng-option value="recent">Recent</ng-option>
+                <ng-option value="7days_old">7 days old</ng-option>
+                <ng-option value="fortnight">Fortnight</ng-option>
+            </ng-select>
+        </div>
+        <div class="col-lg-2 text-center">
+            <mat-radio-group (change)="radioChange($event)" [(ngModel)]="origin">
+                <mat-radio-button value="indian">Indian</mat-radio-button>
+                <mat-radio-button value="global">Global</mat-radio-button>
+            </mat-radio-group>
+            
+        </div>
+        <div class="col-lg-3 text-right">
+            <button (click)="addLead()" class="btn btn-primary">Add Leads</button>
+            <button class="btn btn-primary">Send it back to the Lead Pool</button>
+        </div>
+    </div>
+</div>
